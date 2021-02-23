@@ -93,8 +93,9 @@ plt.clf()
 p_electrode2 = [0, 0, 0]
 l = len(bursts)
 a = bursts[0]
-
-for i in range(l,0,-1):
+#XYZ = np.transpose(XYZ)
+b = XYZ[0]
+for i in range(l):
     bursts[i] = deadzone(bursts[i],XYZ[i],p_electrode2)
 
 first = True #Only reload voltage arrays if necessary -> time intensive
