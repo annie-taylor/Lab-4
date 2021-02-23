@@ -40,4 +40,4 @@ def randplacement(XYZ_big):
     XYZ10 = [[neurons[9][0] + float(x) for x in XYZ_big[:, 0]],
              [neurons[9][1] + float(y) for y in XYZ_big[:, 1]],
              [neurons[9][2] + float(z) for z in XYZ_big[:, 2]]]
-    return np.transpose(XYZ1),np.transpose(XYZ2),np.transpose(XYZ3),np.transpose(XYZ4),np.transpose(XYZ5), np.transpose(XYZ6), np.transpose(XYZ7), np.transpose(XYZ8), np.transpose(XYZ9), np.transpose(XYZ10)
+    return [np.transpose(XYZ1),np.transpose(XYZ2),np.transpose(XYZ3),np.transpose(XYZ4),np.transpose(XYZ5), np.transpose(XYZ6), np.transpose(XYZ7), np.transpose(XYZ8), np.transpose(XYZ9), np.transpose(XYZ10)]
