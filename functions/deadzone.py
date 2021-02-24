@@ -5,8 +5,6 @@ def deadzone(current,XYZ,electrodep):
     distances = []
     # Loop across entire neuron (along x)
     l = len(current)
-    print(np.shape(XYZ))
-    print(np.shape(electrodep))
     for i in range(l):
         # Calculate radius (in microns) for a given location
         radius = np.sqrt((float(XYZ[i][0]) - float(electrodep[0])) ** 2

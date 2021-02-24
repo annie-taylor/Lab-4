@@ -98,8 +98,9 @@ b = XYZ[0]
 for i in range(l):
     bursts[i] = deadzone(bursts[i],XYZ[i],p_electrode2)
 
-first = True #Only reload voltage arrays if necessary -> time intensive
+first = False #Only reload voltage arrays if necessary -> time intensive
 if first:
+    #Argument true means dead zone
     savevoltages(bursts,XYZ,p_electrode2,True)
     savesup(True)
 
@@ -136,7 +137,7 @@ plt.figure(figsize=(15,5))
 plt.title('Voltages Separated by Neuron (inc. dead zone)')
 plt.xlabel('Time (ms)')
 plt.ylabel('Voltage (V)')
-#plt.legend()
+plt.legend()
 plt.savefig('all10_dz.png')
 #plt.show()
 plt.clf()
@@ -162,5 +163,16 @@ plt.xlabel('Time (ms)')
 plt.ylabel('Voltage (V)')
 #plt.legend()
 plt.savefig('realoutput_dz.png')
+#plt.show()
+plt.clf()
+
+f, (ax1, ax2) = plt.subplots(2, 1, sharey=True)
+ax1.plot(time,np.add(cn,bigsup_dz),label='With Dead Zone')
+ax2.plot(time,np.add(cn,bigsup),label='Without Dead Zone')
+plt.xlabel('Time (ms)')
+plt.ylabel('Voltage (V)')
+ax1.legend()
+ax2.legend()
+plt.savefig('realoutput_subplots.png')
 #plt.show()
 plt.clf()
